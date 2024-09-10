@@ -1,5 +1,11 @@
 # preprocessing
 
+git clone https://github.com/lariim/preprocessing.git
+
+conda create --name myenv python=3.8.19
+
+conda activate myenv
+
 conda install pytorch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 pytorch-cuda=12.1 -c pytorch -c nvidia -y
 
 conda install cuda-libraries-static=12.1 cuda-libraries=12.1 cuda-compiler=12.1 cuda-runtime=12.1  cuda-libraries-dev=12.1
