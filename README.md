@@ -2,28 +2,18 @@
 
 git clone https://github.com/lariim/preprocessing.git
 
-conda create --name myenv python=3.8.19
+conda env create -f environment.yml
 
-conda activate myenv
+conda activate preprocess
 
-conda install pytorch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 pytorch-cuda=12.1 -c pytorch -c nvidia -y
+pip install git+https://github.com/facebookresearch/detectron2@main#subdirectory=projects/DensePose
 
-conda install cuda-libraries-static=12.1 cuda-libraries=12.1 cuda-compiler=12.1 cuda-runtime=12.1  cuda-libraries-dev=12.1
+mkdir -p checkpoints
 
-pip install tqdm ninja opencv-python
+Models to put in checkpoints
+https://drive.google.com/drive/folders/14wRN7RV-p4Qqh215hE9gGGJExsSJEFOn?usp=drive_link
 
-pip install matplotlib
-
-pip install scipy
-
-pip install scikit-image
-
-python -m pip install -e detectron2
-
-sudo apt-get install ffmpeg
-
-pip install av
-
+Image in Input
 mkdir -p Input
 
 mkdir -p Output/{agnostic,agnostic_bottom,dense,parse,pose/{img,json}}
